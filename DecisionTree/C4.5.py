@@ -105,7 +105,7 @@ class C45:
         # 1、 计算每个节点的经验熵
         print(self.decision_tree.feature)
         print(self.decision_tree.child_tree().feature)
-
+        pass
 
 if __name__ == '__main__':
     dataSet = [['青年', '否', '否', '一般', '拒绝'],
