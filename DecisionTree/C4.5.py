@@ -21,6 +21,8 @@ class Tree:
         if self.feature_index == None:
             return self.label
         return self.tree[data[self.feature_index]].predict(data)
+    def child_tree(self):
+        return self.tree.tree
 
 class C45:
     def __init__(self, eta=0):
@@ -100,8 +102,9 @@ class C45:
         else:
             return self.decision_tree.predict(data)
     def pruning(self):
-        pass
-
+        # 1、 计算每个节点的经验熵
+        print(self.decision_tree.feature)
+        print(self.decision_tree.child_tree().feature)
 
 
 if __name__ == '__main__':
@@ -125,4 +128,5 @@ if __name__ == '__main__':
     data_df = pd.DataFrame(dataSet, columns=featureName)
     alo = C45()
     alo.fit(data_df)
-    print(alo.predict(['青年', '否', '否', '一般']))
+    # print(alo.predict(['青年', '否', '否', '一般']))
+    print(alo.pruning())
