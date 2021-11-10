@@ -173,4 +173,6 @@ class Id3:
 
 id3 = Id3()
 tree = id3.fit(data_df)
+print(id3.best_dim(np.array(data_df)))
+print(tree)
 print(tree.predict(['青年', '否', '否', '一般']))

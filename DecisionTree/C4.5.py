@@ -21,8 +21,6 @@ class Tree:
         if self.feature_index == None:
             return self.label
         return self.tree[data[self.feature_index]].predict(data)
-    def child_tree(self):
-        return self.tree.tree
 
 class C45:
     def __init__(self, eta=0):
@@ -103,10 +101,8 @@ class C45:
             return self.decision_tree.predict(data)
     def pruning(self):
         # 1、 计算每个节点的经验熵
-        print(self.decision_tree.feature)
-        print(self.decision_tree.child_tree().feature)
+        # 计算剪枝前和剪枝后的损失函数变化
         pass
-
 if __name__ == '__main__':
     dataSet = [['青年', '否', '否', '一般', '拒绝'],
                ['青年', '否', '否', '好', '拒绝'],
