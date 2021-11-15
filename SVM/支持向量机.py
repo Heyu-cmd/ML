@@ -17,7 +17,7 @@ def create_data():
     for d in range(len(data)):
         if data[d, -1] == 0:
             data[d, -1] = -1
-    return data[:, :2], data[:, -1]
+    return data[:, :], data[:, -1]
 
 
 class SVM:

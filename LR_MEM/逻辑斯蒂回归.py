@@ -55,7 +55,7 @@ class LogisticRegression:
 def create_data():
     iris = load_iris()
     X, y = np.array(iris.data), np.array(iris.target)
-    return X[:100, 0:2], y[:100]
+    return X[:100, 0:-1], y[:100]
 
 
 X, y = create_data()
