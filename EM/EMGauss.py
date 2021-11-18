@@ -1,4 +1,5 @@
 # 求解高斯混合模型的EM算法
+# 有问题，需要用拉格朗日乘子法重新做
 import math
 import numpy as np
 
